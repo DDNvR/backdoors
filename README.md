@@ -23,6 +23,6 @@ imagehere\
 Now to utilize the backdoor all you have to do is ssh to the target box and no matter what they change their password to you will always have key access to the host.\
 \
 Note: make sure to use -i [private key file] in your ssh command to specify you want to make use of key authentication.\
-imagehere\
+imagehere
 
 # //------------------------------------
