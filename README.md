@@ -127,7 +127,30 @@ The second requires no script, or webserver to operate it simply calls back to y
 
 # //------------------------------------
 # PHP Backdoor
+imagehere\
 
-asdfasdf\
+Many Linux systems have apache running and hosting some form of a web application. Even if it is not running you have the option to start it (root required) with the command\
+\
+systemctl start apache2\
+\
+Whether it was already started, or you manually brought the service up you have the options of taking a web shell and sticking it in the webroot directory which is located at:\
+\
+/var/www/html\
+\
+I have included links to some of my favorite web shells, but feel free to use your own.\
+\
+The method you take to transfer the web shell to the target is entirely up to you, however, if you would like to see some potential options make sure to check out this guide on file transfers.\
+\
+Once the web shell is on target all you have to do is navigate to:\
+\
+http://[target ip]/webshell.php
+
+imagehere\
+
+Note: The above example is only an example and is entirely dependent on what you name the web shell (it would be a good idea to not call it webshell.php in case there was any confusion).\
+\
+Make sure to stop the apache2 service and remove the web shell if you practiced on your attack box unless you want to give your entire home network access to your host!
+
+imagehere\
 
 # //------------------------------------
