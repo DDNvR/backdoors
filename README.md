@@ -81,9 +81,13 @@ Add the SUID permissions to the file with:\
 chmod u+s privshell\
 \
 Finally copy the file to a spot a normal user can access like /tmp or /var/tmp, and switch to a normal user.\
-imagehere\
+
+[imagehere\](https://github.com/DDNvR/backdoors/blob/main/images/suidbackdoor.png)
+
 \
 All that is left to do is execute the new malicious SUID binary and gain root privileges without ever authenticating with a password!\
-imagehere\
+
+[imagehere\](https://github.com/DDNvR/backdoors/blob/main/images/suidbackdoor2.png)
+
 \
 We covered a lot of ground today, thus I recommend finding two Linux virtual machines to practice these on. In the process of making this guide, I stumbled upon a lot of excellent resources if you would like to read further into the subject, happy hacking.\
