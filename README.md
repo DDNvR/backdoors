@@ -20,17 +20,16 @@ Now that the keys are generated switch back over to the target box and cd to you
 \
 mkdir .ssh\
 touch authorized_keys\
-imagehere\
+[imagehere\](https://github.com/DDNvR/backdoors/blob/main/images/authorizedkeys.png)
 \
 With that taken care of, back on your attacker box, cat you id_rsa.pub (the public key and copy the entire output.\
-image\
+[image\](https://github.com/DDNvR/backdoors/blob/main/images/keyshow.png)
 \
 All that is left to do is to echo the output of your id_rsa.pub into the authorized_keys file on the target box. I always like to double-check key was formatted properly by taking a look at the authorized_keys file. Alternatively to echoing the contents of your public key to the authorized_keys file, if you have ssh access to the target box you can utilize the text editor of your choice and copy + paste the contents.\
-imagehere\
+[imagehere\](https://github.com/DDNvR/backdoors/blob/main/images/addkey.png)
 \
 Now to utilize the backdoor all you have to do is ssh to the target box and no matter what they change their password to you will always have key access to the host.\
 \
 Note: make sure to use -i [private key file] in your ssh command to specify you want to make use of key authentication.\
-imagehere
 
 # //------------------------------------
