@@ -19,17 +19,17 @@ This should generate two files an id_rsa.pub which is your public key, and id_rs
 Now that the keys are generated switch back over to the target box and cd to your user's respective home directory (cd ~). As you can see in the image below there was no .ssh directory or authorized_keys file. This is no issue as you can create them with the commands:\
 \
 mkdir .ssh\
-touch authorized_keys\
+touch authorized_keys
 
 ![image](https://github.com/DDNvR/backdoors/blob/main/images/authorizedkeys.png)
 
 \
-With that taken care of, back on your attacker box, cat you id_rsa.pub (the public key and copy the entire output.\
+With that taken care of, back on your attacker box, cat you id_rsa.pub (the public key and copy the entire output.
 
 ![image](https://github.com/DDNvR/backdoors/blob/main/images/keyshow.png)
 
 \
-All that is left to do is to echo the output of your id_rsa.pub into the authorized_keys file on the target box. I always like to double-check key was formatted properly by taking a look at the authorized_keys file. Alternatively to echoing the contents of your public key to the authorized_keys file, if you have ssh access to the target box you can utilize the text editor of your choice and copy + paste the contents.\
+All that is left to do is to echo the output of your id_rsa.pub into the authorized_keys file on the target box. I always like to double-check key was formatted properly by taking a look at the authorized_keys file. Alternatively to echoing the contents of your public key to the authorized_keys file, if you have ssh access to the target box you can utilize the text editor of your choice and copy + paste the contents.
 
 ![image](https://github.com/DDNvR/backdoors/blob/main/images/addkey.png)
 
