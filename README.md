@@ -36,7 +36,7 @@ All that is left to do is to echo the output of your id_rsa.pub into the authori
 \
 Now to utilize the backdoor all you have to do is ssh to the target box and no matter what they change their password to you will always have key access to the host.\
 \
-Note: make sure to use -i [private key file] in your ssh command to specify you want to make use of key authentication.\
+Note: make sure to use -i [private key file] in your ssh command to specify you want to make use of key authentication.
 
 # //------------------------------------
 # Bashrc Backdoor
@@ -54,7 +54,7 @@ Confirm the aforementioned command completed successfully my examining the end o
 \
 tail ~/.bashrc\
 \
-With that established, all that is left to do is set up a listener. Now every time that user logs in to the box it will call out to your attack box on the specified port number! To simulate this in a lab environment simply exit the ssh session and re-login with the key persistence we set up earlier. This login will trigger the reverse shell to call out.\
+With that established, all that is left to do is set up a listener. Now every time that user logs in to the box it will call out to your attack box on the specified port number! To simulate this in a lab environment simply exit the ssh session and re-login with the key persistence we set up earlier. This login will trigger the reverse shell to call out.
 
 ![image](https://github.com/DDNvR/backdoors/blob/main/images/bashrc.png)
 
@@ -90,4 +90,16 @@ All that is left to do is execute the new malicious SUID binary and gain root pr
 ![image](https://github.com/DDNvR/backdoors/blob/main/images/suidbackdoor2.png)
 
 \
-We covered a lot of ground today, thus I recommend finding two Linux virtual machines to practice these on. In the process of making this guide, I stumbled upon a lot of excellent resources if you would like to read further into the subject, happy hacking.\
+We covered a lot of ground today, thus I recommend finding two Linux virtual machines to practice these on. In the process of making this guide, I stumbled upon a lot of excellent resources if you would like to read further into the subject, happy hacking.
+
+# //------------------------------------
+# Cron Backdoor
+
+asdfasdf\
+
+# //------------------------------------
+# PHP Backdoor
+
+asdfasdf\
+
+# //------------------------------------
