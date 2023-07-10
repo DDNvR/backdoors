@@ -55,7 +55,8 @@ Confirm the aforementioned command completed successfully my examining the end o
 tail ~/.bashrc\
 \
 With that established, all that is left to do is set up a listener. Now every time that user logs in to the box it will call out to your attack box on the specified port number! To simulate this in a lab environment simply exit the ssh session and re-login with the key persistence we set up earlier. This login will trigger the reverse shell to call out.\
-imagehere\
+
+![image](https://github.com/DDNvR/backdoors/blob/main/images/bashrc.png)
 
 # //------------------------------------
 # SUID Backdoor
