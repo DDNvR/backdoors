@@ -12,7 +12,7 @@ SSH keys provide extreme convenience for system administrators, however, they al
 \
 ssh-keygen\
 \
-imagehere\
+(https://raw.githubusercontent.com/DDNvR/backdoors/main/images/sshkeygen.png)
 \
 With that taken care of, back on your attacker box, cat you id_rsa.pub (the public key and copy the entire output.\
 image\
