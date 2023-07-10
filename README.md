@@ -14,6 +14,14 @@ ssh-keygen\
 \
 ![image](https://raw.githubusercontent.com/DDNvR/backdoors/main/images/sshkeygen.png)
 \
+This should generate two files an id_rsa.pub which is your public key, and id_rsa which is your private key.\
+\
+Now that the keys are generated switch back over to the target box and cd to your user's respective home directory (cd ~). As you can see in the image below there was no .ssh directory or authorized_keys file. This is no issue as you can create them with the commands:\
+\
+mkdir .ssh\
+touch authorized_keys\
+imagehere\
+\
 With that taken care of, back on your attacker box, cat you id_rsa.pub (the public key and copy the entire output.\
 image\
 \
