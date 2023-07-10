@@ -94,7 +94,9 @@ We covered a lot of ground today, thus I recommend finding two Linux virtual mac
 
 # //------------------------------------
 # Cron Backdoor
-Cron jobs are often overlooked by daily users, thus making them a great place for us to maintain our access. I will cover two different cron job back door methods leaving it up to you to decide which you prefer.\
+Cron jobs are often overlooked by daily users, thus making them a great place for us to maintain our access. I will cover two different cron job back door methods leaving it up to you to decide which you prefer.
+
+![image](https://github.com/DDNvR/backdoors/blob/main/images/cron1.png)
 \
 The first involves creating a bash script with this command\
 \
@@ -109,9 +111,9 @@ python3 -m http.server\
 Finally set up your netcat listener on the same port specified in your script\
 \
 nc -nlvp [port #]\
-\
-imagehere\
-\
+
+![image](https://github.com/DDNvR/backdoors/blob/main/images/cron2.png)
+
 Now with all that set up and ready to go switch back over to the target box and edit your user’s crontab with the following command:\
 \
 crontab -e\
@@ -127,7 +129,7 @@ The second requires no script, or webserver to operate it simply calls back to y
 
 # //------------------------------------
 # PHP Backdoor
-imagehere\
+![image](https://github.com/DDNvR/backdoors/blob/main/images/php1.png)
 
 Many Linux systems have apache running and hosting some form of a web application. Even if it is not running you have the option to start it (root required) with the command\
 \
@@ -145,12 +147,12 @@ Once the web shell is on target all you have to do is navigate to:\
 \
 http://[target ip]/webshell.php
 
-imagehere\
+![image](https://github.com/DDNvR/backdoors/blob/main/images/php2.png)
 
 Note: The above example is only an example and is entirely dependent on what you name the web shell (it would be a good idea to not call it webshell.php in case there was any confusion).\
 \
 Make sure to stop the apache2 service and remove the web shell if you practiced on your attack box unless you want to give your entire home network access to your host!
 
-imagehere\
+![image](https://github.com/DDNvR/backdoors/blob/main/images/php3.png)
 
 # //------------------------------------
